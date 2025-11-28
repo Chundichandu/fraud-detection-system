@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Payment Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px;">
+                <div>
+                    <h1>🛡️ AI Fraud Detection System</h1>
+                    <p>Advanced machine learning powered transaction security</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <span id="user-info" style="color: white; padding: 10px 15px; background: rgba(255,255,255,0.2); border-radius: 6px; font-size: 14px;"></span>
+                    <button onclick="logout()" class="view-history-link" style="background: #f44336; text-decoration: none; padding: 10px 15px; margin: 0;">🚪 Logout</button>
+                </div>
+            </div>
+            <a href="history.html" class="view-history-link">📊 View Transaction History</a>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2> Analyze New Payment</h2>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="accountHolder">Account Holder Name</label>
+                        <input type="text" id="accountHolder" placeholder="e.g., John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" id="accountNumber" placeholder="e.g., 123456789012" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ifscCode">IFSC Code</label>
+                        <input type="text" id="ifscCode" placeholder="e.g., HDFC0001234" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="IN">India</option>
+                            <option value="US">United States</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="SG">Singapore</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="BR">Brazil</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount </label>
+                        <input type="number" id="amount" placeholder="e.g., 50000" min="1" step="0.01" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn"> Analyze Transaction</button>
+                </form>
+
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing transaction with AI...</p>
+                </div>
+
+                <div id="result" style="display: none;"></div>
+            </div>
+
+            <div class="history-section">
+                <h2>Transaction History</h2>
+                <div id="transactionList">
+                    <div class="no-transactions">
+                        No transactions analyzed yet. Submit a payment to see results here.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation-section">
+            <h2> How Our AI Analysis Works</h2>
+            <p>Our advanced fraud detection system uses machine learning to analyze multiple risk factors in real-time:</p>
+            <ul>
+                <li><strong>Transaction Amount:</strong> Analyzes if the amount is unusually high or follows suspicious patterns</li>
+                <li><strong>Geographic Risk:</strong> Evaluates the country of origin and associated fraud risk levels</li>
+                <li><strong>Timing Analysis:</strong> Considers time of day and unusual transaction timing patterns</li>
+                <li><strong>Account Validation:</strong> Verifies IFSC codes and account number formats for authenticity</li>
+                <li><strong>Pattern Recognition:</strong> Detects sequential or repetitive patterns that may indicate fraud</li>
+            </ul>
+            <p>Each transaction receives a risk score from 0-100%. Transactions above 75% are automatically declined, 40-75% are flagged for review, and below 40% are approved.</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

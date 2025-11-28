@@ -1,0 +1,932 @@
+[
+  {
+    "timestamp": "2025-11-27T00:50:19.502973",
+    "input": {
+      "name": "John Smith",
+      "account": "1234567890",
+      "amount": 50000,
+      "country": "IN",
+      "ifsc": "SBIN0001234"
+    },
+    "result": {
+      "fraudScore": 0.4438158659197401,
+      "status": "review",
+      "reason": "\u26a0\ufe0f Suspicious name pattern detected. Transaction flagged for manual review.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 44.4% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "High",
+          "comment": "Suspicious name pattern detected"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Medium",
+          "comment": "Amount: \u20b950,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Medium",
+          "comment": "Suspicious account number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T00:50:41.504713",
+    "input": {
+      "name": "Jon Smith",
+      "account": "9876543210",
+      "amount": 35000,
+      "country": "IN",
+      "ifsc": "ICIC0000001"
+    },
+    "result": {
+      "fraudScore": 0.3895483269809554,
+      "status": "review",
+      "reason": "\u26a0\ufe0f Suspicious name pattern detected. Transaction flagged for manual review.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 39.0% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "High",
+          "comment": "Suspicious name pattern detected"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Medium",
+          "comment": "Amount: \u20b935,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Medium",
+          "comment": "Suspicious account number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T00:51:13.955710",
+    "input": {
+      "name": "Rajesh Kumar",
+      "account": "5555666677778888",
+      "amount": 150000,
+      "country": "NG",
+      "ifsc": "HDFC0000456"
+    },
+    "result": {
+      "fraudScore": 0.898994116268104,
+      "status": "review",
+      "reason": "\u26a0\ufe0f Suspicious name pattern detected. Transaction flagged for manual review.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "High",
+          "comment": "Model assigned a 89.9% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "High",
+          "comment": "Suspicious name pattern detected"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "High",
+          "comment": "Country 'NG' is in high-risk fraud list"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Critical",
+          "comment": "\u26a0\ufe0f Very high amount: \u20b9150,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Medium",
+          "comment": "Suspicious account number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T02:21:51.797640",
+    "input": {
+      "name": "John Smith",
+      "account": "1234567890",
+      "amount": 50000,
+      "country": "IN",
+      "ifsc": "SBIN0001234"
+    },
+    "result": {
+      "fraudScore": 0.4438158659197401,
+      "status": "review",
+      "reason": "\u26a0\ufe0f Suspicious name pattern detected. Transaction flagged for manual review.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 44.4% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "High",
+          "comment": "Suspicious name pattern detected"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Medium",
+          "comment": "Amount: \u20b950,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Medium",
+          "comment": "Suspicious account number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T02:21:52.812643",
+    "input": {
+      "name": "Jon Smith",
+      "account": "9876543210",
+      "amount": 55000,
+      "country": "IN",
+      "ifsc": "HDFC0000456"
+    },
+    "result": {
+      "fraudScore": 0.46227620563013805,
+      "status": "review",
+      "reason": "\u26a0\ufe0f Suspicious name pattern detected. Transaction flagged for manual review.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 46.2% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "High",
+          "comment": "Suspicious name pattern detected"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "High",
+          "comment": "Amount: \u20b955,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Medium",
+          "comment": "Suspicious account number pattern"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T02:30:24.573725",
+    "input": {
+      "accountHolder": "Chakri",
+      "accountNumber": "110076797730",
+      "ifscCode": "CNRB0005797",
+      "country": "IN",
+      "amount": "1000"
+    },
+    "result": {
+      "fraudScore": 0.2735828859668466,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 27.4% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b91,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T14:34:19.723645",
+    "input": {
+      "accountHolder": "gumma ganesh",
+      "accountNumber": "786401500603",
+      "ifscCode": "ICIC0007864",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.301028120291607,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 30.1% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T14:34:48.097281",
+    "input": {
+      "accountHolder": "gumma ganesh",
+      "accountNumber": "110076797730",
+      "ifscCode": "ICIC0007864",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.3658985683979059,
+      "status": "declined",
+      "reason": "\u26a0\ufe0f FRAUD DETECTED: This person has multiple accounts. Transaction declined immediately.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 36.6% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Critical",
+          "comment": "\ud83d\udea8 ALERT: This person 'gumma ganesh' already has 1 other account(s): 786401500603"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T14:35:14.300525",
+    "input": {
+      "accountHolder": "chundi chandu",
+      "accountNumber": "110076797730",
+      "ifscCode": "CNRB0005797",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.5241134814442681,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 52.4% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "High",
+          "comment": "Previously used: 'gumma ganesh', now using: 'chundi chandu'"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-27T14:35:39.758298",
+    "input": {
+      "accountHolder": "chundi chandu",
+      "accountNumber": "786401500603",
+      "ifscCode": "ICIC0007864",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.596061899198465,
+      "status": "declined",
+      "reason": "\u26a0\ufe0f FRAUD DETECTED: This person has multiple accounts. Transaction declined immediately.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 59.6% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "High",
+          "comment": "Previously used: 'gumma ganesh', now using: 'chundi chandu'"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Critical",
+          "comment": "\ud83d\udea8 ALERT: This person 'chundi chandu' already has 1 other account(s): 110076797730"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-28T14:05:00.523960",
+    "input": {
+      "accountHolder": "gumma ganesh",
+      "accountNumber": "786401500603",
+      "ifscCode": "ICIC0007864",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.301028120291607,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 30.1% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-28T14:05:14.685340",
+    "input": {
+      "accountHolder": "chundi chandu",
+      "accountNumber": "786401500603",
+      "ifscCode": "ICIC0007864",
+      "country": "US",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.5523240180334276,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Medium",
+          "comment": "Model assigned a 55.2% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "High",
+          "comment": "Previously used: 'gumma ganesh', now using: 'chundi chandu'"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'US' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-28T14:05:35.529779",
+    "input": {
+      "accountHolder": "gumma ganesh",
+      "accountNumber": "110076797730",
+      "ifscCode": "CNRB0005797",
+      "country": "IN",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.3658985683979059,
+      "status": "declined",
+      "reason": "\u26a0\ufe0f FRAUD DETECTED: This person has multiple accounts. Transaction declined immediately.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 36.6% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Critical",
+          "comment": "\ud83d\udea8 ALERT: This person 'gumma ganesh' already has 1 other account(s): 786401500603"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'IN' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-29T00:37:55.095125",
+    "input": {
+      "accountHolder": "gumma ganesh",
+      "accountNumber": "786401500603",
+      "ifscCode": "ICIC000786654",
+      "country": "US",
+      "amount": "10000"
+    },
+    "result": {
+      "fraudScore": 0.3997684638580214,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "Low",
+          "comment": "Model assigned a 40.0% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "Low",
+          "comment": "Country 'US' has normal fraud risk"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "Low",
+          "comment": "Amount: \u20b910,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "High",
+          "comment": "Invalid IFSC code format/length"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-11-29T00:52:37.379578",
+    "input": {
+      "accountHolder": "chundi chandu",
+      "accountNumber": "110076797730",
+      "ifscCode": "CNRB0005797",
+      "country": "BR",
+      "amount": "100000"
+    },
+    "result": {
+      "fraudScore": 0.7653581041385534,
+      "status": "review",
+      "reason": "Transaction flagged for review: Account holder name could not be verified.",
+      "riskFactors": [
+        {
+          "factor": "AI Model Risk Analysis",
+          "risk": "High",
+          "comment": "Model assigned a 76.5% risk score."
+        },
+        {
+          "factor": "Account Name Verification",
+          "risk": "High",
+          "comment": "Account holder could not be verified"
+        },
+        {
+          "factor": "Account Usage History",
+          "risk": "Low",
+          "comment": "Account history consistent"
+        },
+        {
+          "factor": "Duplicate Accounts",
+          "risk": "Low",
+          "comment": "No duplicate accounts detected"
+        },
+        {
+          "factor": "Name Pattern Analysis",
+          "risk": "Low",
+          "comment": "Name pattern appears normal"
+        },
+        {
+          "factor": "Geographic Risk",
+          "risk": "High",
+          "comment": "Country 'BR' is in high-risk fraud list"
+        },
+        {
+          "factor": "Transaction Amount",
+          "risk": "High",
+          "comment": "Amount: \u20b9100,000.00"
+        },
+        {
+          "factor": "IFSC Code Validation",
+          "risk": "Low",
+          "comment": "IFSC format valid"
+        },
+        {
+          "factor": "Account Number Validation",
+          "risk": "Low",
+          "comment": "Account format OK"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fraud Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h1 {
+            text-align: center;
+            margin: 0 0 30px 0;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .login-subtitle {
+            text-align: center;
+            color: #999;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .login-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .toggle-signup {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .toggle-signup a {
+            color: #667eea;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toggle-signup a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+            border-left: 4px solid #f44336;
+        }
+
+        .success-message {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #667eea;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1>🔐 Fraud Detection System</h1>
+            <p class="login-subtitle">Secure Authentication</p>
+
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
+
+            <!-- Login Form -->
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="login-button" id="login-btn">
+                    <span id="btn-text">🔓 Login</span>
+                    <span id="btn-loader" style="display: none;"><span class="spinner"></span>Logging in...</span>
+                </button>
+            </form>
+
+            <div class="toggle-signup">
+                Don't have an account? <a onclick="toggleForms()">Create one</a>
+            </div>
+
+            <!-- Signup Form -->
+            <form id="signup-form" style="display: none;" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" placeholder="Choose a username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Choose a password (min 4 chars)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password-confirm">Confirm Password</label>
+                    <input type="password" id="signup-password-confirm" placeholder="Confirm your password" required>
+                </div>
+
+                <button type="submit" class="login-button" id="signup-btn">
+                    <span id="signup-btn-text">📝 Create Account</span>
+                    <span id="signup-btn-loader" style="display: none;"><span class="spinner"></span>Creating...</span>
+                </button>
+            </form>
+
+            <div class="toggle-signup" id="toggle-login" style="display: none;">
+                Already have an account? <a onclick="toggleForms()">Login here</a>
+            </div>
+
+            <!-- Demo Info -->
+            <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 12px; color: #666;">
+                <strong>Demo Credentials:</strong><br>
+                Username: <code>demo</code><br>
+                Password: <code>demo123</code><br>
+                <br>
+                Or create a new account to get started.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('auth_token');
+            if (token) {
+                verifyAndRedirect();
+            }
+            createDemoAccount();
+        });
+
+        function createDemoAccount() {
+            // Demo account is now created on backend startup
+            // This function just logs that it's available
+            console.log('Demo account available: demo / demo123');
+        }
+
+        function toggleForms() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const toggleLogin = document.getElementById('toggle-login');
+            const toggleSignup = document.querySelector('.toggle-signup');
+
+            loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+            signupForm.style.display = signupForm.style.display === 'none' ? 'block' : 'none';
+            toggleLogin.style.display = toggleLogin.style.display === 'none' ? 'block' : 'none';
+            toggleSignup.style.display = toggleSignup.style.display === 'none' ? 'block' : 'none';
+
+            // Clear forms
+            document.getElementById('login-form').reset();
+            document.getElementById('signup-form').reset();
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error-message');
+            const btnText = document.getElementById('btn-text');
+            const btnLoader = document.getElementById('btn-loader');
+            const loginBtn = document.getElementById('login-btn');
+
+            errorDiv.style.display = 'none';
+
+            if (!username || !password) {
+                showError('Please enter username and password');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline';
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                
+                const response = await fetch('http://127.0.0.1:5000/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password }),
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Login successful, storing token and redirecting...');
+                    localStorage.setItem('auth_token', data.token);
+                    localStorage.setItem('username', data.username);
+                    // Redirect immediately
+                    setTimeout(() => {
+                        window.location.href = 'main.html';
+                    }, 500);
+                } else {
+                    showError(data.error || 'Login failed');
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    showError('Request timeout. Please check if backend is running on port 5000.');
+                } else {
+                    showError('Connection error. Is the backend running at http://127.0.0.1:5000?');
+                }
+                console.error('Login error:', error);
+            } finally {
+                loginBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
+            }
+        }
+
+        async function handleSignup(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('signup-username').value.trim();
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-password-confirm').value;
+            const errorDiv = document.getElementById('error-message');
+            const successDiv = document.getElementById('success-message');
+            const signupBtn = document.getElementById('signup-btn');
+            const signupBtnText = document.getElementById('signup-btn-text');
+            const signupBtnLoader = document.getElementById('signup-btn-loader');
+
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+
+            if (!username || !password || !confirmPassword) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            if (password.length < 4) {
+                showError('Password must be at least 4 characters');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+
+            signupBtn.disabled = true;
+            signupBtnText.style.display = 'none';
+            signupBtnLoader.style.display = 'inline';
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    successDiv.textContent = '✅ ' + data.status + '. You can now login.';
+                    successDiv.style.display = 'block';
+                    document.getElementById('signup-form').reset();
+                    setTimeout(() => toggleForms(), 1500);
+                } else {
+                    showError(data.error || 'Signup failed');
+                }
+            } catch (error) {
+                showError('Connection error. Is the backend running?');
+                console.error(error);
+            } finally {
+                signupBtn.disabled = false;
+                signupBtnText.style.display = 'inline';
+                signupBtnLoader.style.display = 'none';
+            }
+        }
+
+        async function verifyAndRedirect() {
+            const token = localStorage.getItem('auth_token');
+            if (!token) {
+                console.log('No token found, staying on login page');
+                return;
+            }
+            
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+                
+                const response = await fetch('http://127.0.0.1:5000/auth/verify', {
+                    headers: { 'Authorization': 'Bearer ' + token },
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+
+                if (response.ok) {
+                    console.log('Token verified, redirecting to main.html');
+                    window.location.href = 'main.html';
+                } else {
+                    console.log('Token verification failed, clearing storage');
+                    localStorage.removeItem('auth_token');
+                    localStorage.removeItem('username');
+                }
+            } catch (error) {
+                console.error('Verification error:', error);
+                localStorage.removeItem('auth_token');
+                localStorage.removeItem('username');
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = '❌ ' + message;
+            errorDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

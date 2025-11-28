@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Fraud Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/history-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>📊 Transaction History</h1>
+            <p>All analyzed transactions organized by date</p>
+        </div>
+
+        <div class="history-controls">
+            <a href="main.html" class="btn-back">← Back to Analysis</a>
+            <a href="analytics.html" class="btn-back" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); text-decoration: none;">📊 Analytics Dashboard</a>
+            <button onclick="refreshHistory()" class="btn-refresh">🔄 Refresh</button>
+            <button onclick="exportToCSV()" class="btn-export">📥 Export CSV</button>
+            <button onclick="clearAllHistory()" class="btn-clear">🗑️ Clear All</button>
+        </div>
+
+        <div class="daily-summary">
+            <h3>📅 Today's Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <span class="label">Today's Transactions</span>
+                    <span class="value" id="today-count">0</span>
+                </div>
+                <div class="summary-box approved">
+                    <span class="label">Approved Today</span>
+                    <span class="value" id="today-approved">0</span>
+                </div>
+                <div class="summary-box review">
+                    <span class="label">Under Review</span>
+                    <span class="value" id="today-review">0</span>
+                </div>
+                <div class="summary-box declined">
+                    <span class="label">Declined Today</span>
+                    <span class="value" id="today-declined">0</span>
+                </div>
+                <div class="summary-box">
+                    <span class="label">Avg Fraud Score</span>
+                    <span class="value" id="today-avg-score">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-summary">
+            <div class="summary-card">
+                <h3>Total Transactions</h3>
+                <p id="total-count">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Approved</h3>
+                <p id="approved-count" class="status-approved">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Under Review</h3>
+                <p id="review-count" class="status-review">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Declined</h3>
+                <p id="declined-count" class="status-declined">0</p>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="search-box-wrapper">
+                <div class="search-input-group">
+                    <input type="text" id="search-input" placeholder="🔍 Search by name, account, amount, country, IFSC, or reason..." class="search-box">
+                    <button onclick="clearSearch()" class="btn-search-clear" title="Clear search">✕</button>
+                </div>
+                <span class="search-help">💡 Searches all fields in real-time (no Enter needed)</span>
+                <div id="recent-searches" class="recent-searches"></div>
+            </div>
+            
+            <div class="filter-row">
+                <select id="status-filter" class="filter-select">
+                    <option value="">📊 All Statuses</option>
+                    <option value="approved">✅ Approved</option>
+                    <option value="review">⚠️ Review</option>
+                    <option value="declined">❌ Declined</option>
+                </select>
+
+                <select id="sort-by" class="filter-select">
+                    <option value="date-desc">📅 Date (Newest)</option>
+                    <option value="date-asc">📅 Date (Oldest)</option>
+                    <option value="score-desc">📊 Fraud Score (High)</option>
+                    <option value="score-asc">📊 Fraud Score (Low)</option>
+                    <option value="amount-desc">💰 Amount (High)</option>
+                    <option value="amount-asc">💰 Amount (Low)</option>
+                </select>
+                
+                <div class="date-picker-wrapper">
+                    <label for="date-from">📅 From Date:</label>
+                    <input type="date" id="date-from" class="date-picker">
+                </div>
+                
+                <div class="date-picker-wrapper">
+                    <label for="date-to">📅 To Date:</label>
+                    <input type="date" id="date-to" class="date-picker">
+                </div>
+                
+                <button onclick="clearDateFilters()" class="btn-clear-dates">Clear Dates</button>
+            </div>
+        </div>
+
+        <div class="results-counter">
+            <span id="results-shown">0</span> of <span id="results-total">0</span> transactions
+        </div>
+
+        <div id="history-by-date" class="history-timeline">
+            <div id="empty-message" class="empty-state">
+                <p>No transactions found. Start by analyzing a transaction!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/history.js"></script>
+</body>
+</html>
