@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🛡️ AI Fraud Detection System
 
 A comprehensive machine learning-powered fraud detection system for analyzing financial transactions. Built with Python Flask backend and modern HTML5/CSS3/JavaScript frontend.
@@ -764,3 +765,6 @@ Password: demo123
 **Status:**  Production Ready  
 **Last Updated:** November 28, 2025  
 
+=======
+# fraud-detection-system
+>>>>>>> a56584dda1c04dadb82cd609e506fbd913cd3153
